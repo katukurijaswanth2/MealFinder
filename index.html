@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEAL FINDER</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+.menu{
+  height: 300px;
+  width: 200px;
+  background-color: aqua;
+  position: absolute;
+  z-index: 100;
+  top:10px;
+  right:10px;
+}
+.wrong{
+  align-items: right;
+  display: flex;
+  justify-content: right;
+  position: absolute;
+  right:2px;
+  top:2px;
+}
+/* =============== */
+.menu {
+      height: 300px;
+      width: 200px;
+      background-color: aqua;
+      position: absolute;
+      z-index: 100;
+      top: 10px;
+      right: 10px;
+      display: none;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .wrong {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 20px;
+      cursor: pointer;
+    }
+</style>
+
+<body>
+  <nav>
+    <div class="icon">
+      <i class="fa-solid fa-house-chimney-window"></i>
+      <span>MEAL FINDER<span>
+    </div>
+    <i class="fa-solid fa-bars" class="hanb"></i>
+
+
+  </nav>
+  <div class="menu">
+    <i class="fa-regular fa-circle-xmark"  id="wrong"></i>
+    <ul class="menu-main" id="main-menu"></ul>
+  </div>
+  <section>
+    <div class="search">
+      <input type="text" placeholder="Search recipes here..." class="search-input">
+      <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="hero-text">
+      <h1> What is your favourate cuisines?</h1>
+      <h2>PERSONALIZE YOUR EXPERIENCE</h2>
+
+    </div>
+  </section>
+  <!-- dynamic div starts  -->
+  <div class="dynamic-cnt"></div>
+  <!-- dynamic div ends here -->
+  <!-- cards stars here -->
+  <div id="card"></div>
+  <!-- cards end here -->
+
+  <script>
+    let url = "https://www.themealdb.com/api/json/v1/1/categories.php";
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        let card = document.getElementById("card");
+        let categories = data.categories;
+
+        for (let i = 0; i < categories.length; i++) 
+        {
+          let mealCard = document.createElement("div");
+          mealCard.classList.add("meal-card");
+          mealCard.style.animationDelay = `${i * 0.1}s`;
+
+          let title = document.createElement("span");
+          title.classList.add("meal-name");
+          title.textContent = categories[i].strCategory;
+
+          let img = document.createElement("img");
+          img.classList.add("images");
+          img.src = categories[i].strCategoryThumb;
+          img.alt = categories[i].strCategory;
+
+          mealCard.appendChild(title);
+          mealCard.appendChild(img);
+
+          card.appendChild(mealCard);
+        }
+      
+
+      })
+      .catch(err => console.log("API failed:", err));
+  </script>
+
+</body>
+
+</html>

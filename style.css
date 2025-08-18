@@ -1,0 +1,191 @@
+body {
+    background: #fafafa;
+}
+
+/* hero section starts here  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    height: 55px;
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav span {
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav i {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background: url(./images/hero-bg.jpg) center/cover no-repeat;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
+    text-align: center;
+    padding: 20px;
+    animation: fadeInUp 2s;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 30%;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 0 10px;
+}
+
+.search-input::placeholder {
+    color: #000;
+}
+
+.search-icon {
+    height: 45px;
+    width: 45px;
+    background-color:orange;
+    color: #fafafa;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-icon i {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.hero-text {
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+}
+
+.hero-text h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+/* hero section ends here */
+/* -------------------------------------------------------------------------------------------- */
+
+#card {
+    padding-top: 10vh;
+    margin-top: 10vh;
+    flex-wrap: wrap;
+    gap: 20px;
+    column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 0.6fr));
+
+    justify-content: space-evenly;
+    /* cards start from left */
+    max-width: 1200px;
+    /* optional: control width */
+    margin: 0 auto;
+ 
+}
+
+.meal-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+
+    /* Initial state for fade-in */
+    opacity: 0;
+    transform: translateY(20px);
+
+    /* smooth animation for transform (fade + hover) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Hover effect */
+.meal-card:hover {
+    transform: scale(1.08);
+    /* slight zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* lifted shadow */
+}
+
+.meal-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+.meal-name {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: orange;
+    padding: 5px;
+    color: #000000;
+    border-radius: 5px;
+    width: 45%;
+    font-weight: bold;
+}
+.images {
+    /* padding: 10px; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 4px;
+}
+
+
+/* Fade-in keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
