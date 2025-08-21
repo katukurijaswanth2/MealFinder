@@ -2,6 +2,65 @@ body {
     background: #fafafa;
 }
 
+/* hamburgur styles starts here */
+/* =============== */
+.menu {
+    width: 200px;
+    position: absolute;
+    /* display: none; */
+    z-index: 100;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0px
+}
+
+#wrong {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2rem;
+    text-align: right;
+    cursor: pointer;
+    padding-left: 98%;
+    color: red;
+
+}
+
+.listCategory a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 5px;
+    border-bottom: 2px solid white;
+}
+
+.listCategory {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    list-style: none;
+    padding: 8px;
+    display: block;
+    border-bottom: 2px solid white;
+}
+
+.listCategory a:hover {
+    background-color: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgba(220, 195, 7, 0.879);
+
+
+
+}
+
+.listCategory a:hover {
+    color: aliceblue;
+}
+
+/* hamburger end here */
+
 /* hero section starts here  */
 * {
     margin: 0;
@@ -16,6 +75,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+
+
 }
 
 .icon {
@@ -48,7 +113,7 @@ section {
     background-blend-mode: overlay;
     text-align: center;
     padding: 20px;
-    animation: fadeInUp 2s;
+    /* animation: fadeInUp 2s; */
 }
 
 .search {
@@ -76,7 +141,7 @@ section {
 .search-icon {
     height: 45px;
     width: 45px;
-    background-color:orange;
+    background-color: orange;
     color: #fafafa;
     border: none;
     border-radius: 50%;
@@ -109,74 +174,7 @@ section {
 /* hero section ends here */
 /* -------------------------------------------------------------------------------------------- */
 
-#card {
-    padding-top: 10vh;
-    margin-top: 10vh;
-    flex-wrap: wrap;
-    gap: 20px;
-    column-gap: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 0.6fr));
-
-    justify-content: space-evenly;
-    /* cards start from left */
-    max-width: 1200px;
-    /* optional: control width */
-    margin: 0 auto;
- 
-}
-
-.meal-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    width: 250px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background: #fff;
-
-    /* Initial state for fade-in */
-    opacity: 0;
-    transform: translateY(20px);
-
-    /* smooth animation for transform (fade + hover) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-/* Hover effect */
-.meal-card:hover {
-    transform: scale(1.08);
-    /* slight zoom */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    /* lifted shadow */
-}
-
-.meal-card img {
-    width: 100%;
-    border-radius: 8px;
-}
-.meal-name {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: orange;
-    padding: 5px;
-    color: #000000;
-    border-radius: 5px;
-    width: 45%;
-    font-weight: bold;
-}
-.images {
-    /* padding: 10px; */
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 4px;
-}
-
-
-/* Fade-in keyframes */
+/* aninimation starts here */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -187,5 +185,152 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
+#home-cards {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 👈 exactly 5 columns */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1600px; /* 5 cards × (width + gap) fits neatly */
+    margin-left: auto;
+    margin-right: auto; /* 👈 centers the block */
+}
+
+.home-card {
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    border: 2px solid rgb(249, 247, 247);
+    animation: fadeInUp 0.6s ease forwards;
+
+    /* let grid control sizing */
+    width: 100%;  
+    height: 320px;
+}
+
+.home-name{
+    position: absolute;
+    top:0;
+    right: 0;
+    padding: 8px 10px;
+    background-color: orange;
+    color: #000;
+    font-weight: bold;
+    margin: 10px;
+    width: 38%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+
+}
+.home-img{
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+/* above we have home.html cards they are category cards */
+/* belove we have category.html cards style */
+#category-details{
+    margin: 20px;
+    margin-bottom: 0;
+
+  
+}
+.category-info{
+      border: 2px solid orange;
+      padding: 10px;
+
+}
+.category-info h2{
+    color: orange;
+font-size: xx-large;
+
+}
+.category-info p{
+text-align: justify;
+display: flex;
+align-items: center;
+margin-top: 5px;
+line-height: 1.3;
+/* font-weight: bold; */
+}
+#category-meals{
+  margin-top: 0px;
+    display: flex;
+     /* 👈 exactly 5 columns */
+     flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1600px; /* 5 cards × (width + gap) fits neatly */
+    margin-left: auto;
+    margin-right: auto;
+}
+.meals-title{
+    margin-top: 20px;
+    padding-left: 15px;
+}
+.category-card{
+     background-color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    border: 2px solid rgb(249, 247, 247);
+    animation: fadeInUp 0.6s ease forwards;
+
+    /* let grid control sizing */
+    width: 320px;  
+    height: 320px;
+
+}
+.category-card img{
+      height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.category-card span{
+    padding: 8px 10px;
+    /* background-color: orange; */
+    color: #000;
+    font-weight: bold;
+    margin: 10px;
+    /* width: 38%; */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+.li-a-link{
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    padding: 8px;
+}
+.list-items{
+    list-style: none;
+    padding: 8px;
+    /* border-bottom: 1px solid black; */
+    /* border-top: 1px solid black; */
+    margin: 5px 0;
+}
+.list-items:hover{
+    background-color: orange;
+}
+/* hello */
