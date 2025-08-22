@@ -15,11 +15,13 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
     for (let category of categories) {
       // Menu build
       let listCategory = document.createElement("li");
-      listCategory.classList.add("list-items")
+      listCategory.classList.add("list-items");
+
       let menu_link = document.createElement("a");
       menu_link.classList.add("li-a-link");
       menu_link.href = `category.html?name=${category.strCategory}`;
       menu_link.textContent = category.strCategory;
+
       listCategory.appendChild(menu_link);
       menuList.appendChild(listCategory);
 
@@ -46,12 +48,14 @@ fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`)
       let mealCard = document.createElement("div");
       mealCard.classList.add("category-card");
 
+      // ✅ Include both id + category in the link
       mealCard.innerHTML = `
-       <a href="meal.html?id=${meal.idMeal}">
-        <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-        <span>${meal.strMeal}</span>
+        <a href="meal.html?id=${meal.idMeal}&category=${categoryName}">
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="mealimg-in-category">
+          <span class="meal-name-in-category">${meal.strMeal}</span>
         </a>
       `;
+
       categoryMeals.appendChild(mealCard);
     }
   });

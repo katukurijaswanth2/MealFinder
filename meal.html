@@ -1,94 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meal Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous"/>
   <link rel="stylesheet" href="style.css">
-<style>.instruction-list li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-  position: relative;
-  padding-left: 25px;
-}
-.meal-hero-section{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    /* gap:10px; */
-    border: 3px solid rgb(81, 255, 0);
-    padding: 20px;
-    max-width: 100%;
-    gap: 40px;
-    margin: 20px;
-
-}
-.meal-image-sec{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: fill;
-  
-}
-.meal-image-sec img{
-      width: 100%;
-        object-fit: fill;
-}
-.meal-section{
-    border: 1px solid orangered;
-    
-}
-.meal-header{
-    width: 100%;
-}
-.meal-header h1{
-    color: orange;
-    font-size: xx-large;
-    font-weight: bolder;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    width: 100%;
-    display: block;
-    border-bottom: 2px solid orange;
-    padding-bottom: 5px;
-}
-.meal-category-p{
-    padding-top: 5px;
-    font-size: large;
-    padding-bottom: 5px;
-}
-.scource-link{
-  font-weight: bold;
-  font-size: large;
-}
-.scource-link a{
-    text-decoration: none;
-    font-size: medium;
-    color: red;
-}
-
-.instruction-list li::before {
-  content: "✔";
-  color: tomato;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.Ingredients{
-
-    padding: 10px;
-    background-color: rgb(213, 159, 60);
-}
-
-</style>
 </head>
+
 <body>
+   <nav>
+    <div class="icon">
+      <i class="fa-solid fa-house-chimney-window"></i>
+      <span>MEAL FINDER</span>
+    </div>
+    
+    <i class="fa-solid fa-bars" id="hamBurger"></i>
+
+  </nav>
+
+  <div class="menu">
+    <i class="fa-regular fa-circle-xmark" id="wrong"></i>
+    <ul class="menu-main" id="main-menu"></ul>
+  </div>
+
+  <section>
+    <div class="search">
+      <input type="text" placeholder="Search recipes here..." class="search-input">
+      <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="hero-text">
+      <h1>What is your favourite cuisine?</h1>
+      <h2>PERSONALIZE YOUR EXPERIENCE</h2>
+    </div>
+    
+  </section>
+
+  <!-- ✅ CATEGORY CONTENT -->
+  <!-- <div id="category-details"></div> -->
+  <!-- <div id="category-meals"></div> -->
+
+    
+ 
+
+
+
+
   <div id="meal-details"></div>
-  <script src="meal.js"></script>
+    <div id="category-meals"></div>
+    <script src="all.js"></script>
+  <!-- <script src="nav.js"></script>
+  <script src="script.js"></script>
+    <script src="category.js"></script>
+  <script src="meal.js"></script> -->
 </body>
+
 </html>
