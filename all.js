@@ -239,7 +239,6 @@ document.addEventListener("DOMContentLoaded", () => {
               <p>
                 <a href="category.html?name=${categoryName}" class="back-link">Back to ${categoryName}</a>
               </p>  
-              </div>
             </div>
 
             <div class="meal-hero-section">
