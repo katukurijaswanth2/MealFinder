@@ -1,5 +1,5 @@
-﻿# MealFinderMEAL FINDER
-GitHub: link   Deployment: link
+﻿MEAL FINDER
+
 •	KEY FEATURES
 
 1.	Interactive Meal Categories: The homepage showcases a variety of meal categories, each represented by a clickable card. Users can explore different cuisines by clicking on these cards, which redirect them to detailed pages about each category.
@@ -35,6 +35,7 @@ The platform is developed using modern web technologies:
 
 
  
+
 
 
 
