@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // ========================
         mealDetails.innerHTML = `
           <div class="meal-section">
-          <div class="path-parent">
+          <div class="path-parent"
             <div class="path">
               <a href="index.html">HOME</a>
               <h1>>></h1>
