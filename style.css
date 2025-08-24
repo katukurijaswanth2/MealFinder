@@ -468,7 +468,23 @@ margin-bottom: 50px;
   text-underline-offset: 8px;
   padding-bottom: 5px;
 }
+.meal-header>.tags{
+  font-size: x-large;
+  padding-bottom: 5px;
+  text-transform: capitalize;
+  font-weight: bold;
 
+
+}
+.meal-header span{
+  font-weight: 400;
+  font-size: medium;
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  padding: 5px;
+  border: 1px solid orange;
+}
 .meal-category-p {
   padding-top: 5px;
   font-size: xx-large;
@@ -486,6 +502,8 @@ margin-bottom: 50px;
   color: red;
 }
 
+
+
 .instruction-list li::before {
   content: "✔";
   color: tomato;
@@ -501,6 +519,7 @@ margin-bottom: 50px;
   margin-top: 10px;
   color: aliceblue;
   font-size: xx-large;
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
@@ -515,7 +534,12 @@ margin-bottom: 50px;
   justify-content: flex-start;
 
 }
+.Ingredients ul{
+  display: grid;
+   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  list-style: none;
 
+}
 .Ingredients li {
   color: aliceblue;
   text-align: justify;
@@ -530,6 +554,47 @@ margin-bottom: 50px;
 
 .Ingredients li:hover {
   color: aliceblue;
+}
+.measurements{
+  padding: 20px;
+  margin: 40px;
+  height: auto;
+  border: 2px solid #ffffff;
+ 
+  /* position: relative; */
+}
+.measurement-list{
+  list-style: none;
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  /* flex-wrap: wrap; */
+  gap:1rem;
+
+}
+.measurements h2{
+  /* font-family: 'Courier New', Courier, monospace; */
+  
+    font-weight: bold;
+  
+}
+.measurements ul{
+  padding: 10px;
+    font-size: large;
+  text-align: justify;
+  /* position: relative; */
+}
+.measurements li{
+  padding: 5px;
+  /* position: relative; */
+}
+.measurements li::before{
+  content:"✔";
+  color: tomato;
+  /* position: absolute; */
+  top: 0;
+  /* left: -5px; */
+  font-weight: bold;
+  padding-right: 5px;
 }
 
 .instructions {

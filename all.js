@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(err => console.error("Menu fetch error:", err));
   }
 
-  // ✅ Always call this, so menu is built on all pages
+  //  Always call this, so menu is built on all pages
   buildMenu();
 
   // ----------------------------
@@ -188,15 +188,37 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         let meal = data.meals[0];
 
+        // ========================
+        // INGREDIENTS
+        // ========================
         let ingredientsList = "";
         for (let i = 1; i <= 20; i++) {
           let ingredient = meal["strIngredient" + i];
           let measure = meal["strMeasure" + i];
-          if (ingredient && ingredient.trim() !== "") {
-            ingredientsList += `<li>${ingredient} - ${measure}</li>`;
+
+          if (ingredient && ingredient.trim() !== "")
+             {
+            ingredientsList += `<li> ${ingredient}</li>`;
+          }
+        }
+      //======================= 
+      //     Measurements
+      //=======================
+        
+        let MeasurementsList="";
+        for(let i=1;i<=20;i++)
+          {
+          let ingredients=meal["strIngredient"+i];
+          let measurements=meal["strMeasure"+i];
+            if (ingredients && ingredients.trim() !== "")
+          {
+            MeasurementsList += `<li>${measurements}${ingredients}</li>`;
           }
         }
 
+        // ========================
+        // INSTRUCTIONS
+        // ========================
         let instructionSteps = meal.strInstructions.split(/\r?\n/);
         let instructionsList = "";
         instructionSteps.forEach(step => {
@@ -205,6 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
 
+        // ========================
+        // PUT EVERYTHING INTO HTML
+        // ========================
         mealDetails.innerHTML = `
           <div class="meal-section">
             <div class="path">
@@ -228,11 +253,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     ? `<p class="scource-link">Source: <a href="${meal.strYoutube}" target="_blank">Watch on YouTube</a></p>`
                     : ""
                 }
+
                 <div class="Ingredients">
                   <h2>Ingredients</h2>
-                  <ol>${ingredientsList}</ol>
+                  <ul>${ingredientsList}</ul>
                 </div>
               </div>
+            </div>
+            <div class="measurements">
+            <h2>MEASUREMENTS</h2>
+            <ul class="measurement-list">${MeasurementsList}</ul>
             </div>
 
             <div class="instructions">
