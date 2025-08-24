@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           let card = document.createElement("div");
           card.classList.add("home-card");
-          card.style.animationDelay = `${i * 0.2}s`;
+          // card.style.animationDelay = `${i * 0.2}s`;
 
           card.addEventListener("click", () => {
             window.location.href = `category.html?name=${category.strCategory}`;
