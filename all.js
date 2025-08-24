@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>${category.strCategoryDescription}</p>
               </div>
               <h1 class="meals-title">MEALS</h1>
+              
             `;
           }
         }
@@ -161,6 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
           mealCard.classList.add("category-card");
 
           mealCard.innerHTML = `
+        
+
             <a href="meal.html?id=${meal.idMeal}&category=${categoryName}">
               <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="mealimg-in-category">
               <span class="meal-name-in-category">${meal.strMeal}</span>
@@ -196,22 +199,19 @@ document.addEventListener("DOMContentLoaded", () => {
           let ingredient = meal["strIngredient" + i];
           let measure = meal["strMeasure" + i];
 
-          if (ingredient && ingredient.trim() !== "")
-             {
+          if (ingredient && ingredient.trim() !== "") {
             ingredientsList += `<li> ${ingredient}</li>`;
           }
         }
-      //======================= 
-      //     Measurements
-      //=======================
-        
-        let MeasurementsList="";
-        for(let i=1;i<=20;i++)
-          {
-          let ingredients=meal["strIngredient"+i];
-          let measurements=meal["strMeasure"+i];
-            if (ingredients && ingredients.trim() !== "")
-          {
+        //======================= 
+        //     Measurements
+        //=======================
+
+        let MeasurementsList = "";
+        for (let i = 1; i <= 20; i++) {
+          let ingredients = meal["strIngredient" + i];
+          let measurements = meal["strMeasure" + i];
+          if (ingredients && ingredients.trim() !== "") {
             MeasurementsList += `<li>${measurements}${ingredients}</li>`;
           }
         }
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // ========================
         mealDetails.innerHTML = `
           <div class="meal-section">
-          <div class="path-parent"
+          <div class="path-parent">
             <div class="path">
               <a href="index.html">HOME</a>
               <h1>>></h1>
@@ -240,6 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a href="category.html?name=${categoryName}" class="back-link">Back to ${categoryName}</a>
               </p>  
             </div>
+          </div>
 
             <div class="meal-hero-section">
               <div class="meal-image-sec">
@@ -249,11 +250,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h1>${meal.strMeal}</h1>
                 <p class="meal-category-p"><b>Category:</b> ${meal.strCategory}</p>
                 <p class="tags">tags:<span> ${meal.strTags || ""}</span></p>
-                ${
-                  meal.strYoutube
-                    ? `<p class="scource-link">Source: <a href="${meal.strYoutube}" target="_blank">Watch on YouTube</a></p>`
-                    : ""
-                }
+                ${meal.strYoutube
+            ? `<p class="scource-link">Source: <a href="${meal.strYoutube}" target="_blank">Watch on YouTube</a></p>`
+            : ""
+          }
 
                 <div class="Ingredients">
                   <h2>Ingredients</h2>
