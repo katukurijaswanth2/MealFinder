@@ -2,20 +2,16 @@ body {
   background: #fafafa;
 }
 
-/* hamburgur styles starts here */
-/* =============== */
 .menu {
   width: 200px;
-  position: absolute;
+  position: fixed;
   display: none;
   z-index: 100;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   padding: 10px;
   color: black;
-  background-color: rgb(255, 255, 255);
-  position: fixed;
-  top: 0px
+  background-color: #fff;
 }
 
 #wrong {
@@ -26,7 +22,6 @@ body {
   cursor: pointer;
   padding-left: 98%;
   color: red;
-
 }
 
 .listCategory a {
@@ -38,7 +33,7 @@ body {
 }
 
 .listCategory {
-  color: rgb(0, 0, 0);
+  color: #000;
   text-decoration: none;
   list-style: none;
   padding: 8px;
@@ -47,21 +42,11 @@ body {
 }
 
 .listCategory a:hover {
-  background-color: rgb(5, 5, 5);
-  color: rgb(255, 255, 255);
+  background-color: #050505;
+  color: #fff;
   border-bottom: 2px solid rgba(220, 195, 7, 0.879);
-
-
-
 }
 
-.listCategory a:hover {
-  color: aliceblue;
-}
-
-/* hamburger end here */
-
-/* hero section starts here  */
 * {
   margin: 0;
   padding: 0;
@@ -79,8 +64,6 @@ nav {
   top: 0;
   width: 100%;
   z-index: 20;
-
-
 }
 
 .icon {
@@ -113,7 +96,6 @@ section {
   background-blend-mode: overlay;
   text-align: center;
   padding: 20px;
-  /* animation: fadeInUp 2s; */
 }
 
 .search {
@@ -153,7 +135,7 @@ section {
 
 .search-icon i {
   font-size: 1rem;
-  color: #ffffff;
+  color: #fff;
 }
 
 .hero-text {
@@ -171,21 +153,15 @@ section {
   font-size: 1.5rem;
 }
 
-/* hero section ends here */
-/* -------------------------------------------------------------------------------------------- */
-
-/* aninimation starts here */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
 
 .Cat {
@@ -193,52 +169,37 @@ section {
   justify-content: flex-start;
   width: 85%;
   height: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
+  margin: 10px auto 0;
 }
 
 .Cat h1 {
   display: flex;
   align-items: center;
-  /* padding-left:4rem; */
 }
 
 #home-cards {
   width: 85%;
-  /* padding:8% 8%; */
-  margin-top: 20px;
+  margin: 20px auto 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-
   justify-content: center;
   align-items: center;
-  /* padding: 20px; */
   max-width: 1600px;
-  /* 5 cards × (width + gap) fits neatly */
-  margin-left: auto;
-  margin-right: auto;
-  /* 👈 centers the block */
 }
 
 .home-card {
   padding: 0.5rem;
-  /* width:300px; */
-  /* height: 250px; */
   box-shadow: 5px 5px 15px rgb(145, 136, 136);
-  background-color: rgb(250, 250, 250);
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   opacity: 0;
-  /* border-radius: 20px; */
   border: 1px solid rgb(179, 175, 175);
   animation: fadeInUp 0.6s ease forwards;
-
-  /* let grid control sizing */
 }
 
 .home-name {
@@ -249,13 +210,10 @@ section {
   background-color: orange;
   color: #000;
   font-weight: bold;
-  /* margin: 10px; */
   width: 45%;
-  align-items: center;
   display: flex;
   justify-content: center;
   border-radius: 5px;
-
 }
 
 .home-img {
@@ -265,31 +223,21 @@ section {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  /* padding:0.5rem; */
 }
 
-/* above we have home.html cards they are category cards */
-/* belove we have category.html cards style */
 #category-details {
-  margin: 20px;
-  /* margin-bottom: 50px; */
+  margin: 20px auto;
   width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-
-
 }
 
 .category-info {
   border: 2px solid orange;
   padding: 10px;
-
 }
 
 .category-info h2 {
   color: orange;
   font-size: xx-large;
-
 }
 
 .category-info p {
@@ -298,90 +246,58 @@ section {
   align-items: center;
   margin-top: 5px;
   line-height: 1.3;
-  /* font-weight: bold; */
 }
 
 #category-meals {
   width: 85%;
-  /* padding:8% 8%; */
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin: 20px auto 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-margin-bottom: 50px;
   justify-content: center;
   align-items: center;
-  /* padding: 20px; */
   max-width: 1600px;
-  /* 5 cards × (width + gap) fits neatly */
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .meals-title {
   margin-top: 20px;
-  /* padding-left: 15px; */
 }
 
 .category-card {
-
   padding: 0.5rem;
-  /* width:300px; */
-  /* height: 250px; */
   box-shadow: 5px 5px 15px rgb(145, 136, 136);
-  background-color: rgb(250, 250, 250);
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  opacity: 0;
-  /* border-radius: 20px; */
   border: 1px solid rgb(179, 175, 175);
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
-
-
 }
 
 .category-card img {
   height: 200px;
   width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 10px;
-
-
 }
 
 .category-card span {
-  /* position: absolute;
-  top: 8px;
-  right: 8px; */
   padding: 8px 5px;
-  background-color: rgb(255, 255, 254);
+  background-color: #fff;
   color: #000;
   font-weight: bold;
-  /* margin: 10px; */
   width: 100%;
-  align-items: center;
   display: flex;
   justify-content: center;
   border-radius: 5px;
-  border-radius: 5px;
-
-
 }
 
 .category-card a {
   text-decoration: none;
   color: #000;
 }
-
-
-
 
 .li-a-link {
   text-decoration: none;
@@ -393,8 +309,6 @@ margin-bottom: 50px;
 .list-items {
   list-style: none;
   padding: 8px;
-  /* border-bottom: 1px solid black; */
-  /* border-top: 1px solid black; */
   margin: 5px 0;
 }
 
@@ -402,12 +316,6 @@ margin-bottom: 50px;
   background-color: orange;
 }
 
-/* hello */
-
-
-
-
-/* meal page styles here */
 .instruction-list li {
   margin-bottom: 8px;
   line-height: 1.5;
@@ -419,14 +327,10 @@ margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap:10px; */
-  /* border: 3px solid; */
   padding: 20px;
-  max-width: 100%;
   gap: 40px;
   margin: 20px;
-  /* background-color: bisque; */
-
+  max-width: 100%;
 }
 
 .meal-image-sec {
@@ -435,8 +339,6 @@ margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  object-fit: fill;
-
 }
 
 .meal-image-sec img {
@@ -444,15 +346,9 @@ margin-bottom: 50px;
   height: 90%;
   object-position: center;
   object-fit: cover;
-
 }
 
-.meal-section {
-  /* border: 1px solid orangered; */
- 
-
-}
-.path-parent{
+.path-parent {
   display: flex;
   justify-content: center;
 }
@@ -465,37 +361,31 @@ margin-bottom: 50px;
   color: orange;
   font-size: 2.6rem;
   font-weight: bolder;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  display: block;
+  text-align: center;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 8px;
   padding-bottom: 5px;
 }
-.meal-header>.tags{
+
+.meal-header > .tags {
   font-size: x-large;
   padding-bottom: 5px;
   text-transform: capitalize;
   font-weight: bold;
-
-
 }
-.meal-header span{
+
+.meal-header span {
   font-weight: 400;
   font-size: medium;
-  /* display: flex; */
-  /* justify-content: center; */
   align-items: center;
   padding: 5px;
   border: 1px solid orange;
 }
+
 .meal-category-p {
-  padding-top: 5px;
+  padding: 5px 0;
   font-size: xx-large;
-  padding-bottom: 5px;
 }
 
 .scource-link {
@@ -508,8 +398,6 @@ margin-bottom: 50px;
   font-size: xx-large;
   color: red;
 }
-
-
 
 .instruction-list li::before {
   content: "✔";
@@ -526,80 +414,63 @@ margin-bottom: 50px;
   margin-top: 10px;
   color: aliceblue;
   font-size: xx-large;
-
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 .Ingredients ol {
-  /* list-style: none; */
   padding-left: 0;
   padding: 15px;
   display: flex;
   margin: 10px;
   flex-wrap: wrap;
   justify-content: flex-start;
-
 }
-.Ingredients ul{
+
+.Ingredients ul {
   display: grid;
-   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   list-style: none;
-
 }
+
 .Ingredients li {
   color: aliceblue;
   text-align: justify;
   padding: 5px;
-  margin: 0;
-  flex: 1 1 200px;
-  box-sizing: border-box;
   font-size: 20px;
   font-weight: 500;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.Ingredients li:hover {
-  color: aliceblue;
-}
-.measurements{
+.measurements {
   padding: 20px;
   margin: 40px;
-  height: auto;
-  border: 2px solid #ffffff;
- 
-  /* position: relative; */
+  border: 2px solid #fff;
 }
-.measurement-list{
+
+.measurement-list {
   list-style: none;
   display: grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  /* flex-wrap: wrap; */
-  gap:1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
 
+.measurements h2 {
+  font-weight: bold;
 }
-.measurements h2{
-  /* font-family: 'Courier New', Courier, monospace; */
-  
-    font-weight: bold;
-  
-}
-.measurements ul{
+
+.measurements ul {
   padding: 10px;
-    font-size: large;
+  font-size: large;
   text-align: justify;
-  /* position: relative; */
 }
-.measurements li{
+
+.measurements li {
   padding: 5px;
-  /* position: relative; */
 }
-.measurements li::before{
-  content:"✔";
+
+.measurements li::before {
+  content: "✔";
   color: tomato;
-  /* position: absolute; */
-  top: 0;
-  /* left: -5px; */
   font-weight: bold;
   padding-right: 5px;
 }
@@ -621,7 +492,6 @@ margin-bottom: 50px;
 .instructions h2 {
   padding-bottom: 20px;
   font-size: xx-large;
-
 }
 
 .instructions ul {
@@ -644,8 +514,7 @@ margin-bottom: 50px;
 
 .path a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
