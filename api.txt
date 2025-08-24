@@ -1,0 +1,2 @@
+categories = "https://www.themealdb.com/api/json/v1/1/categories.php
+ meals in categories = https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}
