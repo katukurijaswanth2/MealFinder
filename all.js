@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           let card = document.createElement("div");
           card.classList.add("home-card");
-          // card.style.animationDelay = `${i * 0.2}s`;
+          card.style.animationDelay = `${i * 0.2}s`;
 
           card.addEventListener("click", () => {
             window.location.href = `category.html?name=${category.strCategory}`;
@@ -232,12 +232,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // ========================
         mealDetails.innerHTML = `
           <div class="meal-section">
+          <div class="path-parent">
             <div class="path">
               <a href="index.html">HOME</a>
               <h1>>></h1>
               <p>
                 <a href="category.html?name=${categoryName}" class="back-link">Back to ${categoryName}</a>
               </p>  
+              </div>
             </div>
 
             <div class="meal-hero-section">
